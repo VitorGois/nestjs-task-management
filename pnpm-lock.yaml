@@ -13,6 +13,8 @@ specifiers:
   '@types/supertest': ^2.0.11
   '@typescript-eslint/eslint-plugin': ^4.28.3
   '@typescript-eslint/parser': ^4.28.3
+  class-transformer: ^0.4.0
+  class-validator: ^0.13.1
   eslint: ^7.31.0
   eslint-config-prettier: ^8.3.0
   eslint-plugin-prettier: ^3.4.0
@@ -30,9 +32,11 @@ specifiers:
   uuid: ^8.3.2
 
 dependencies:
-  '@nestjs/common': 8.0.4_033f8a4c30db515df75e2229027182dc
+  '@nestjs/common': 8.0.4_e911b02ebc86a0e92191a7b133b2fcd0
   '@nestjs/core': 8.0.4_c391f583c8477c1b79adf82ef00e8dc0
   '@nestjs/platform-express': 8.0.4_dbb23fa745e40b87eda38a58a66b6bd5
+  class-transformer: 0.4.0
+  class-validator: 0.13.1
   reflect-metadata: 0.1.13
   rimraf: 3.0.2
   rxjs: 7.2.0
@@ -745,7 +749,7 @@ packages:
       - webpack-cli
     dev: true
 
-  /@nestjs/common/8.0.4_033f8a4c30db515df75e2229027182dc:
+  /@nestjs/common/8.0.4_e911b02ebc86a0e92191a7b133b2fcd0:
     resolution: {integrity: sha512-qgQTHH+0y64btdnqSuQSo8Ou7Okb6+8l2StjDOlzaPK36Ln1uBLoa6jQnwqxlAHUHqEocmraL1V5+wnSYz2CRA==}
     peerDependencies:
       cache-manager: '*'
@@ -762,6 +766,8 @@ packages:
         optional: true
     dependencies:
       axios: 0.21.1
+      class-transformer: 0.4.0
+      class-validator: 0.13.1
       iterare: 1.2.1
       reflect-metadata: 0.1.13
       rxjs: 7.2.0
@@ -789,7 +795,7 @@ packages:
       '@nestjs/websockets':
         optional: true
     dependencies:
-      '@nestjs/common': 8.0.4_033f8a4c30db515df75e2229027182dc
+      '@nestjs/common': 8.0.4_e911b02ebc86a0e92191a7b133b2fcd0
       '@nestjs/platform-express': 8.0.4_dbb23fa745e40b87eda38a58a66b6bd5
       '@nuxtjs/opencollective': 0.3.2
       fast-safe-stringify: 2.0.8
@@ -808,7 +814,7 @@ packages:
       '@nestjs/common': ^8.0.0
       '@nestjs/core': ^8.0.0
     dependencies:
-      '@nestjs/common': 8.0.4_033f8a4c30db515df75e2229027182dc
+      '@nestjs/common': 8.0.4_e911b02ebc86a0e92191a7b133b2fcd0
       '@nestjs/core': 8.0.4_c391f583c8477c1b79adf82ef00e8dc0
       body-parser: 1.19.0
       cors: 2.8.5
@@ -844,7 +850,7 @@ packages:
         optional: true
     dependencies:
       optional: 0.1.4
-      '@nestjs/common': 8.0.4_033f8a4c30db515df75e2229027182dc
+      '@nestjs/common': 8.0.4_e911b02ebc86a0e92191a7b133b2fcd0
       '@nestjs/core': 8.0.4_c391f583c8477c1b79adf82ef00e8dc0
       '@nestjs/platform-express': 8.0.4_dbb23fa745e40b87eda38a58a66b6bd5
       tslib: 2.3.0
@@ -1075,6 +1081,10 @@ packages:
     dependencies:
       '@types/superagent': 4.1.12
     dev: true
+
+  /@types/validator/13.6.3:
+    resolution: {integrity: sha512-fWG42pMJOL4jKsDDZZREnXLjc3UE0R8LOJfARWYg6U966rxDT7TYejYzLnUF5cvSObGg34nd0+H2wHHU5Omdfw==}
+    dev: false
 
   /@types/yargs-parser/20.2.1:
     resolution: {integrity: sha512-7tFImggNeNBVMsn0vLrpn1H1uPrUBdnARPTpZoitY37ZrdJREzf7I16tMrlK3hen349gr1NYh8CmZQa7CTG6Aw==}
@@ -1779,6 +1789,18 @@ packages:
   /cjs-module-lexer/1.2.2:
     resolution: {integrity: sha512-cOU9usZw8/dXIXKtwa8pM0OTJQuJkxMN6w30csNRUerHfeQ5R6U3kkU/FtJeIf3M202OHfY2U8ccInBG7/xogA==}
     dev: true
+
+  /class-transformer/0.4.0:
+    resolution: {integrity: sha512-ETWD/H2TbWbKEi7m9N4Km5+cw1hNcqJSxlSYhsLsNjQzWWiZIYA1zafxpK9PwVfaZ6AqR5rrjPVUBGESm5tQUA==}
+    dev: false
+
+  /class-validator/0.13.1:
+    resolution: {integrity: sha512-zWIeYFhUitvAHBwNhDdCRK09hWx+P0HUwFE8US8/CxFpMVzkUK8RJl7yOIE+BVu2lxyPNgeOaFv78tLE47jBIg==}
+    dependencies:
+      '@types/validator': 13.6.3
+      libphonenumber-js: 1.9.22
+      validator: 13.6.0
+    dev: false
 
   /cli-cursor/3.1.0:
     resolution: {integrity: sha512-I/zHAwsKf9FqGoXM4WWRACob9+SNukZTd94DWF57E4toouRulbCxcUh6RKUEOQlYTHJnzkPMySvPNaaSLNfLZw==}
@@ -3651,6 +3673,10 @@ packages:
       type-check: 0.4.0
     dev: true
 
+  /libphonenumber-js/1.9.22:
+    resolution: {integrity: sha512-nE0aF0wrNq09ewF36s9FVqRW73hmpw6cobVDlbexmsu1432LEfuN24BCudNuRx4t2rElSeK/N0JbedzRW/TC4A==}
+    dev: false
+
   /lines-and-columns/1.1.6:
     resolution: {integrity: sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=}
     dev: true
@@ -5025,6 +5051,11 @@ packages:
       convert-source-map: 1.8.0
       source-map: 0.7.3
     dev: true
+
+  /validator/13.6.0:
+    resolution: {integrity: sha512-gVgKbdbHgtxpRyR8K0O6oFZPhhB5tT1jeEHZR0Znr9Svg03U0+r9DXWMrnRAB+HtCStDQKlaIZm42tVsVjqtjg==}
+    engines: {node: '>= 0.10'}
+    dev: false
 
   /vary/1.1.2:
     resolution: {integrity: sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=}
