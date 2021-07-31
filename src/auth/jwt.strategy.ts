@@ -1,5 +1,6 @@
 import { JwtPayload } from ".pnpm/@types+jsonwebtoken@8.5.4/node_modules/@types/jsonwebtoken";
 import { Injectable, UnauthorizedException } from "@nestjs/common";
+import { ConfigService } from "@nestjs/config";
 import { PassportStrategy } from "@nestjs/passport";
 import { InjectRepository } from "@nestjs/typeorm";
 import { ExtractJwt, Strategy } from 'passport-jwt'
@@ -12,9 +13,10 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
   constructor(
     @InjectRepository(UsersRepository)
     private readonly usersRepository: UsersRepository,
+    private readonly configService: ConfigService,
   ) { 
     super({
-      secretOrKey: 'topSecret51',
+      secretOrKey: configService.get('JWT_SECRET'),
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(), 
     });
   }

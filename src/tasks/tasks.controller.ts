@@ -14,7 +14,9 @@ export class TasksController {
 
   private logger = new Logger('TasksController');
 
-  constructor(private tasksService: TasksService) {}
+  constructor(
+    private readonly tasksService: TasksService,
+  ) { }
 
   @Get()
   public getAllTasks(
